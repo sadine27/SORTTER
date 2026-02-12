@@ -227,3 +227,13 @@ file_selector = {
 for i in file_selector.values():
     os.makedirs(i,exist_ok=True)
 
+#moving the files to their respective folders
+for j in os.listdir():
+    name,ext=os.path.splitext(j)
+    ext=ext.upper()
+    if ext in file_selector:
+        targeted_folder=file_selector[ext]
+        shutil.move(j,targeted_folder)
+        print(f"file {j} moved to folder {targeted_folder}")
+    else:
+        print(f"file {j} could not be sorted")
