@@ -222,3 +222,8 @@ file_selector = {
     ".SRT":"Misc Files",
     ".TORRENT":"Misc Files",
 }
+
+#making the folders
+for i in file_selector.values():
+    os.makedirs(i,exist_ok=True)
+
